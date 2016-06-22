@@ -37,7 +37,7 @@ object SparkSQLWindowFucs {
      * Partition by :指定窗口函数分组key
      * order by:分组后进行排序
      */
-    val result = hiveContext.sql("Select name,score" +
+    val result = hiveContext.sql("Select name,score " +
       "From (" +
       "Select " +
       "name," +
@@ -45,7 +45,7 @@ object SparkSQLWindowFucs {
       "row_number() over (Partition by name Order By score Desc) rank" +
       "from scores " +
       ") sub_scores " +
-      "where rank <<=4")
+      "where rank <=4")
     /*在Driver的控制台上打印结果*/
     result.show()
 
