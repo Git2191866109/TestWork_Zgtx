@@ -8,7 +8,7 @@ import org.apache.spark.{SparkContext, SparkConf}
  */
 object SparkSQLWindowFucs {
   def main(args: Array[String]) {
-    val conf = new SparkConf().setAppName("SparkSQL2Hive").setMaster("local")
+    val conf = new SparkConf().setAppName("SparkSQL2Hive").setMaster("spark://search-91:7077")
     /**
      * 通过传入SparkConf实例来定制Spark运行程序的具体参数
      */
@@ -26,12 +26,12 @@ object SparkSQLWindowFucs {
     /**
      * 使用名称为hive的数据,接下来的所有的表操作都位于这个库中
      */
-    hiveContext.sql("use hive")
+    hiveContext.sql("use test_mq")
     hiveContext.sql("Drop table if exists scores")
     hiveContext.sql("Create table if not exists scores (name String,score Int)" +
-      "Row Format Delemited Fields Terminate By ' ' Lines Terminated By '\\n'")
+      "Row Format Delimited Fields Terminated By ' ' Lines Terminated By '\\n'")
     /*把要处理的数据导入要处理的表中*/
-    hiveContext.sql("Load Data Local Inpath '路径' Into Table scores")
+    hiveContext.sql("Load Data Local Inpath '/home/bigdata/topNGroup.txt' Into Table scores")
     /**
      * 使用子查询的方式完成目标数据的提取,在目标数据内部使用窗口row_number来进行分组排序:
      * Partition by :指定窗口函数分组key
