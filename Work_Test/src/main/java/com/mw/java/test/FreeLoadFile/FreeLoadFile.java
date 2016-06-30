@@ -20,7 +20,7 @@ public class FreeLoadFile {
     @Test
     public void getProValue() {
         MessageSource source = new ClassPathXmlApplicationContext("testapp.xml");
-        String name = source.getMessage("customer.name", new Object[]{28, "http://www.eeee.com"}, Locale.US);
+        String name = source.getMessage("customer", new Object[]{28, "http://www.eeee.com"}, Locale.US);
 
         System.out.println("Customer name (English) : " + name);
 

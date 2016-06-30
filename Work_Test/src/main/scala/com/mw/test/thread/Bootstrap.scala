@@ -1,7 +1,6 @@
 package com.mw.test.thread
 
 /**
-  * Created by ZX on 2016/3/29.
   */
 object Bootstrap {
 

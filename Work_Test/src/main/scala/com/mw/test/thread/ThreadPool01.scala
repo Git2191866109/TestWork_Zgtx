@@ -3,11 +3,11 @@ package com.mw.test.thread
 import java.util.concurrent.{ExecutorService, Executors}
 
 /**
-  * Created by ZX on 2016/3/29.
   */
 object ThreadPool01 {
 
   def main(args: Array[String]) {
+    /*定义线程池*/
     val threadPool: ExecutorService = Executors.newFixedThreadPool(10)
     val task = new Runnable {
       override def run(): Unit = {

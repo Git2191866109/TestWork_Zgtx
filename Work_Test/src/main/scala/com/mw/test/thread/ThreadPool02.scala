@@ -3,7 +3,6 @@ package com.mw.test.thread
 import java.util.concurrent.{Callable, Executors}
 
 /**
-  * Created by ZX on 2016/3/29.
   */
 object ThreadPool02 {
 
@@ -13,7 +12,7 @@ object ThreadPool02 {
       override def call(): Int = {
         var i = 0
         println("start compute")
-        Thread.sleep(10000)
+        Thread.sleep(1000)
         i = 1000
         i
       }
@@ -21,6 +20,6 @@ object ThreadPool02 {
     val future = threadPool.submit(synTask)
     val result = future.get()
     println(result)
-
+    threadPool.shutdown();
   }
 }

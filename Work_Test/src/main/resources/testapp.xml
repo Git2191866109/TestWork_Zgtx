@@ -36,6 +36,6 @@
     </bean>
     <!--导入子配置文件-->
     <import resource="classpath:spring/init-test.xml"/>
-    <!--<import resource="classpath:spring/free-load-file.xml"/>-->
+    <import resource="classpath:spring/free-load-file.xml"/>
 
 </beans>

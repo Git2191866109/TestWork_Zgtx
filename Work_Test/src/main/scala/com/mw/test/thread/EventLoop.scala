@@ -3,9 +3,6 @@ package com.mw.test.thread
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.{BlockingQueue, LinkedBlockingDeque}
 
-/**
-  * Created by ZX on 2016/3/29.
-  */
 abstract class EventLoop[E](name: String) {
 
   private val eventQueue: BlockingQueue[E] = new LinkedBlockingDeque[E]()

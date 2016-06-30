@@ -1,9 +1,8 @@
 package com.mw.test.thread
 
 /**
-  * Created by ZX on 2016/3/29.
   */
-class TaskProcessEventLoop(name:String) extends EventLoop[TaskEvent](name){
+class TaskProcessEventLoop(name: String) extends EventLoop[TaskEvent](name) {
 
   /*
   override protected def onReceive(event: TaskEvent): Unit = event match {
