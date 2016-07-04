@@ -20,12 +20,10 @@ public class FreeLoadFile {
     @Test
     public void getProValue() {
         MessageSource source = new ClassPathXmlApplicationContext("testapp.xml");
-        String name = source.getMessage("customer", new Object[]{28, "http://www.eeee.com"}, Locale.US);
+//        String message = source.getMessage("message", null, "Default", null);
+        String message_1 = source.getMessage("argument.required", new Object[]{"第一个测试参数", "第二个测试参数"}, "Default", Locale.US);
+//        System.out.println(message);
+        System.out.println(message_1);
 
-        System.out.println("Customer name (English) : " + name);
-
-        String namechinese = source.getMessage("customer.name", new Object[]{28, "http://www.eeee.com"}, Locale.SIMPLIFIED_CHINESE);
-
-        System.out.println("Customer name (Chinese) : " + namechinese);
     }
 }
